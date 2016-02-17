@@ -1,6 +1,6 @@
 <p align="center">
   <br />
-  <img src="https://raw.githubusercontent.com/artnotfound/yeezy-copper/master/yeezycopper.gif" />
+  <img src="https://raw.githubusercontent.com/artnotfound/yeezy-copper/master/yeezy-cop.gif" />
 </p>
 
 # Yeezy Copper
