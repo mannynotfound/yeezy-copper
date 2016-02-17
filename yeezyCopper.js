@@ -31,10 +31,6 @@ function pay () {
   });
 
   $('input#dwfrm_payment_creditCard_number').val(function () {
-    return config.name_on_card;
-  });
-
-  $('input#dwfrm_payment_creditCard_number').val(function () {
     return config.card_number;
   });
 
