@@ -10,6 +10,7 @@ var config = {
   'zipcode': '10013',
   'phone_number': 'XXX-XXX-XXXX', // must be in this format
   'billing_address_1': 'Billionaire Boys',
+  'billing_address_2': '',
   'billing_city': 'Fairfax',
   'billing_state': 'California',
   'billing_zipcode': '90036',
@@ -108,7 +109,7 @@ function addNewShipping() {
     });
 
     $('.co-billing .textinput.address2').val(function () {
-      return '';
+      return config.billing_address_2;
     });
 
     $('.co-billing .textinput.city').val(function () {
@@ -153,7 +154,7 @@ function correctBilling (cb) {
   });
 
   $('.billing .textinput.address2').val(function () {
-    return '';
+    return config.billing_address_2;
   });
 
   $('.billing .textinput.city').val(function () {
