@@ -1,0 +1,26 @@
+{
+  "name": "Yeezy Copper",
+  "description": "Automatically add Yeezys in your preferred size to your cart and then automate the checkout process.",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": ["*://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.adidas.com/*"],
+      "js": ["jquery-1.12.0.min.js", "yeezyCopper.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon" : "icon-16.png",
+    "default_title": "Enable/Disable"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  }
+}
