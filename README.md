@@ -26,6 +26,7 @@ Download this repository and follow the instructions [here](https://developer.ch
 
 ## Notes:
 
+* Assumes you're logged into the Adidas store already.
 * Probably most fuccboi code on GitHub. I am not liable for anything you cop using this and I wouldnt use it unless you understand what its doing.
 * Don't keep this running (Especially since it will auto cop on page load). Delete this garbage as soon as you cop.
 * jQuery spaghetti chrome extensions are so fun to make. see also [twitter-classic](https://github.com/artnotfound/twitter-classic)

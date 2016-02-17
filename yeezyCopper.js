@@ -92,39 +92,41 @@ function addNewShipping() {
     return config.zipcode;
   });
 
-  $('.shipping .countyprovince .ffSelectButton').trigger('click');
+  if (config.billing_different_than_shipping) {
+    $('.shipping .countyprovince .ffSelectButton').trigger('click');
 
-  $('.shipping .countyprovince .ffSelectMenuMid > ul > li').each(function() {
-    if ($(this).text().trim() == config.state) {
-      $(this).trigger('click');
-    }
-  });
+    $('.shipping .countyprovince .ffSelectMenuMid > ul > li').each(function() {
+      if ($(this).text().trim() == config.state) {
+        $(this).trigger('click');
+      }
+    });
 
-  $('.second-address-option .ffCheckbox').trigger('click');
+    $('.second-address-option .ffCheckbox').trigger('click');
 
-  $('.co-billing .textinput.address1').val(function () {
-    return config.billing_address_1;
-  });
+    $('.co-billing .textinput.address1').val(function () {
+      return config.billing_address_1;
+    });
 
-  $('.co-billing .textinput.address2').val(function () {
-    return '';
-  });
+    $('.co-billing .textinput.address2').val(function () {
+      return '';
+    });
 
-  $('.co-billing .textinput.city').val(function () {
-    return config.billing_city;
-  });
+    $('.co-billing .textinput.city').val(function () {
+      return config.billing_city;
+    });
 
-  $('.billing .countyprovince .ffSelectButton').trigger('click');
+    $('.billing .countyprovince .ffSelectButton').trigger('click');
 
-  $('.billing .countyprovince .ffSelectMenuMid > ul > li').each(function() {
-    if ($(this).text().trim() == config.billing_state) {
-      $(this).trigger('click');
-    }
-  });
+    $('.billing .countyprovince .ffSelectMenuMid > ul > li').each(function() {
+      if ($(this).text().trim() == config.billing_state) {
+        $(this).trigger('click');
+      }
+    });
 
-  $('.co-billing .textinput.zip').val(function () {
-    return config.billing_zipcode;
-  });
+    $('.co-billing .textinput.zip').val(function () {
+      return config.billing_zipcode;
+    });
+  }
 
   saveDelivery();
 }
