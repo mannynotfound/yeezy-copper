@@ -227,27 +227,27 @@ function correctShipping (cb) {
   });
 
   $('.shipping .textinput.address1').val(function () {
-    return config.billing_address_1;
+    return config.shipping_address_1;
   });
 
   $('.shipping .textinput.address2').val(function () {
-    return '';
+    return config.shipping_address_2;
   });
 
   $('.shipping .textinput.city').val(function () {
-    return config.billing_city;
+    return config.city;
   });
 
   $('.shipping .countyprovince .ffSelectButton').trigger('click');
 
   $('.shipping .countyprovince .ffSelectMenuMid > ul > li').each(function() {
-    if ($(this).text().trim() == config.billing_state) {
+    if ($(this).text().trim() == config.state) {
       $(this).trigger('click');
     }
   });
 
   $('.shipping .textinput.zip').val(function () {
-    return config.billing_zipcode;
+    return config.zipcode;
   });
 
   $('.shipping .textinput.phone').val(function () {
