@@ -1,3 +1,5 @@
+// EDIT THE STUFF BELOW IN ORDER TO MAKE THIS THING WORK. :)
+
 var config = {
   'desired_sizes': ['9', '9.5', '10', '8.5', '8', '10.5', '11', '11.5', '12'], // arranged in order of preference
   'billing_different_than_shipping': true, // set to use diff billing address
@@ -9,7 +11,7 @@ var config = {
   'state': 'New York',
   'zipcode': '10013',
   'phone_number': 'XXX-XXX-XXXX', // must be in this format
-  'billing_address_1': 'Billionaire Boys',
+  'billing_address_1': '300 Yeezy St',
   'billing_address_2': '',
   'billing_city': 'Fairfax',
   'billing_state': 'California',
@@ -20,6 +22,12 @@ var config = {
   'expires_year': '2001',
   'security_code': '404'
 };
+
+// PLEASE DO NOT EDIT ANYTHING BELOW THIS
+// PLEASE DO NOT EDIT ANYTHING BELOW THIS
+// PLEASE DO NOT EDIT ANYTHING BELOW THIS
+// PLEASE DO NOT EDIT ANYTHING BELOW THIS
+// PLEASE DO NOT EDIT ANYTHING BELOW THIS
 
 function placeOrder () {
   console.log('PLACING ORDER!!!!! PRAY FOR ME FAM!!!');
@@ -278,7 +286,7 @@ function checkCorrectShipping (cb) {
   }
 }
 
-// jank mode promise to make sure shipping is ok
+//making sure the shipping stuff worked
 function addSavedShipping () {
   var timer, shippingOk = false, billingOk = false;
 
@@ -381,7 +389,7 @@ function checkPage () {
   else if (window.location.href.indexOf('Cart-Show') > -1) {
     $('button[name=dwfrm_cart_checkoutCart]').trigger('click');
   }
-  // aww shit we're shipping.. lets make sure info is correct
+  // we're shipping.. lets make sure info is correct
   else if (window.location.href.indexOf('delivery-start') > -1) {
     addShipping();
   }
