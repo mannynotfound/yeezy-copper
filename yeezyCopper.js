@@ -1,25 +1,34 @@
+// EDIT THE STUFF BELOW IN ORDER TO MAKE THIS THING WORK. :)
+// I PUT NOTES ON THE RIGHT OF EACH FIELD TO HELP YOU OUT.
+
 var config = {
   'desired_sizes': ['9', '9.5', '10', '8.5', '8', '10.5', '11', '11.5', '12'], // arranged in order of preference
-  'billing_different_than_shipping': true, // set to use diff billing address
-  'first_name': 'Hypebeast',
-  'last_name': 'McYeezus',
-  'street_address_1': '2 Supreme St.',
-  'street_address_2': 'Suite 6',
-  'city': 'New York',
-  'state': 'New York',
-  'zipcode': '10013',
+  'billing_different_than_shipping': true, // set to use different billing address, TRUE or FALSE
+  'first_name': 'Hypebeast', // Shipping firstname
+  'last_name': 'McYeezus', // Shipping surname
+  'street_address_1': '2 Supreme St.', // main address for shipping address
+  'street_address_2': 'Suite 6', // used for apartment #s, etc FOR SHIPPING
+  'city': 'New York', // City for shipping information
+  'state': 'New York', // State for shipping information
+  'zipcode': '10013', // ZIP CODE for shipping information
   'phone_number': 'XXX-XXX-XXXX', // must be in this format
-  'billing_address_1': 'Billionaire Boys',
-  'billing_address_2': '',
-  'billing_city': 'Fairfax',
-  'billing_state': 'California',
-  'billing_zipcode': '90036',
-  'name_on_card': 'Hypebeast McYeezus',
-  'card_number': 'STEALMYIDENTITY101',
+  'billing_address_1': '300 Yeezy St', // main address for billing address
+  'billing_address_2': '', // used for apartment #s, etc for BILLING
+  'billing_city': 'Fairfax', // City for billing information
+  'billing_state': 'California', // State for billing information
+  'billing_zipcode': '90036', // ZIP CODE for billing information
+  'name_on_card': 'Hypebeast McYeezus', //FULL NAME as printed on the front of your Credit Card
+  'card_number': 'STEALMYIDENTITY101', // Put your full Credit Card # in this field without spaces or dashes or anything
   'expires_month': 'January', // must be full month name to match adidas.com
-  'expires_year': '2001',
-  'security_code': '404'
+  'expires_year': '2001', // Year the Credit Card expires
+  'security_code': '404' // a 3 or 4 digit CVV code that is on the back of your Credit Card (4 Digits for AMEX on front)
 };
+
+// PLEASE DO NOT EDIT ANYTHING BELOW THIS
+// PLEASE DO NOT EDIT ANYTHING BELOW THIS
+// PLEASE DO NOT EDIT ANYTHING BELOW THIS
+// PLEASE DO NOT EDIT ANYTHING BELOW THIS
+// PLEASE DO NOT EDIT ANYTHING BELOW THIS
 
 function placeOrder () {
   console.log('PLACING ORDER!!!!! PRAY FOR ME FAM!!!');
@@ -278,7 +287,7 @@ function checkCorrectShipping (cb) {
   }
 }
 
-// jank mode promise to make sure shipping is ok
+//making sure the shipping stuff worked
 function addSavedShipping () {
   var timer, shippingOk = false, billingOk = false;
 
@@ -381,7 +390,7 @@ function checkPage () {
   else if (window.location.href.indexOf('Cart-Show') > -1) {
     $('button[name=dwfrm_cart_checkoutCart]').trigger('click');
   }
-  // aww shit we're shipping.. lets make sure info is correct
+  // we're shipping.. lets make sure info is correct
   else if (window.location.href.indexOf('delivery-start') > -1) {
     addShipping();
   }
