@@ -73,9 +73,10 @@ function pay () {
 
 function addNewShipping() {
 
-  if (config.overnight){
+  if (config.overnight) {
     console.log("SELECTED OVERNIGHT SHIPPING!!")
     $('.shipping .shippingoptions .shipment-method .shipping-methods-list .active.shipping-method-Overnight.clearfix.shipping-method-list-item').trigger('click');
+  }
   });
 
   $('.textinput.firstname').val(function () {
