@@ -22,6 +22,7 @@ var config = {
   'expires_month': 'January', // must be full month name to match adidas.com
   'expires_year': '2001', // Year the Credit Card expires
   'security_code': '404' // a 3 or 4 digit CVV code that is on the back of your Credit Card (4 Digits for AMEX on front)
+  'overnight': false, //set for overnight shipping for an extra charge of $15 USD, TRUE OR FALSE
 };
 
 // PLEASE DO NOT EDIT ANYTHING BELOW THIS
@@ -34,6 +35,11 @@ function placeOrder () {
   console.log('PLACING ORDER!!!!! PRAY FOR ME FAM!!!');
   $('button.place-order').trigger('click');
 }
+
+if (config.overnight){
+  console.log("SELECTED OVERNIGHT SHIPPING!!")
+  $('.shipping .shippingoptions .shipment-method .shipping-methods-list .active.shipping-method-Overnight.clearfix.shipping-method-list-item').trigger('click');
+    }
 
 function pay () {
   $('input#dwfrm_payment_creditCard_owner').val(function () {
@@ -138,7 +144,7 @@ function addNewShipping() {
     });
   }
 
-  saveDelivery();
+    saveDelivery();
 }
 
 function saveDelivery () {
