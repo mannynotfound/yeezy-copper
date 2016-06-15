@@ -22,7 +22,6 @@ var config = {
   'expires_month': 'January', // must be full month name to match adidas.com
   'expires_year': '2001', // Year the Credit Card expires
   'security_code': '404' // a 3 or 4 digit CVV code that is on the back of your Credit Card (4 Digits for AMEX on front)
-  'overnight': false, //set for overnight shipping for an extra charge of $15 USD, TRUE OR FALSE
 };
 
 // PLEASE DO NOT EDIT ANYTHING BELOW THIS
@@ -35,7 +34,6 @@ function placeOrder () {
   console.log('PLACING ORDER!!!!! PRAY FOR ME FAM!!!');
   $('button.place-order').trigger('click');
 }
-
 
 function pay () {
   $('input#dwfrm_payment_creditCard_owner').val(function () {
@@ -72,7 +70,6 @@ function pay () {
 }
 
 function addNewShipping() {
-
   $('.textinput.firstname').val(function () {
     return config.first_name;
   });
@@ -141,7 +138,7 @@ function addNewShipping() {
     });
   }
 
-    saveDelivery();
+  saveDelivery();
 }
 
 function saveDelivery () {
@@ -293,7 +290,7 @@ function checkCorrectShipping (cb) {
 //making sure the shipping stuff worked
 function addSavedShipping () {
   var timer, shippingOk = false, billingOk = false;
-  OvernightShipping();
+
   checkCorrectShipping(function() {
     shippingOk = true;
   });
@@ -308,7 +305,6 @@ function addSavedShipping () {
 
   var checkInfo = function () {
     if (shippingOk && billingOk) {
-
       clearInterval(timer);
       saveDelivery();
     }
@@ -317,17 +313,10 @@ function addSavedShipping () {
   timer = setInterval(checkInfo, 300);
 }
 
-function OvernightShipping();
-  if (config.overnight) {
-    console.log("SELECTED OVERNIGHT SHIPPING!!")
-    $('.shipping .shippingoptions .shipment-method .shipping-methods-list .active.shipping-method-Overnight.clearfix.shipping-method-list-item').trigger('click');
-  }
-
 function addShipping () {
   if ($('div.saved-address').length) addSavedShipping();
   else addNewShipping();
 }
-
 
 function waitForCaptcha(cb) {
   if ($('.g-recaptcha').length) {
