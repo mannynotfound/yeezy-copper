@@ -73,12 +73,6 @@ function pay () {
 
 function addNewShipping() {
 
-  if (config.overnight) {
-    console.log("SELECTED OVERNIGHT SHIPPING!!")
-    $('.shipping .shippingoptions .shipment-method .shipping-methods-list .active.shipping-method-Overnight.clearfix.shipping-method-list-item').trigger('click');
-  }
-  });
-
   $('.textinput.firstname').val(function () {
     return config.first_name;
   });
@@ -299,7 +293,7 @@ function checkCorrectShipping (cb) {
 //making sure the shipping stuff worked
 function addSavedShipping () {
   var timer, shippingOk = false, billingOk = false;
-
+  OvernightShipping();
   checkCorrectShipping(function() {
     shippingOk = true;
   });
@@ -314,6 +308,7 @@ function addSavedShipping () {
 
   var checkInfo = function () {
     if (shippingOk && billingOk) {
+
       clearInterval(timer);
       saveDelivery();
     }
@@ -322,10 +317,17 @@ function addSavedShipping () {
   timer = setInterval(checkInfo, 300);
 }
 
+function OvernightShipping();
+  if (config.overnight) {
+    console.log("SELECTED OVERNIGHT SHIPPING!!")
+    $('.shipping .shippingoptions .shipment-method .shipping-methods-list .active.shipping-method-Overnight.clearfix.shipping-method-list-item').trigger('click');
+  }
+
 function addShipping () {
   if ($('div.saved-address').length) addSavedShipping();
   else addNewShipping();
 }
+
 
 function waitForCaptcha(cb) {
   if ($('.g-recaptcha').length) {
