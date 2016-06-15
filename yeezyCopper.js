@@ -22,6 +22,7 @@ var config = {
   'expires_month': 'January', // must be full month name to match adidas.com
   'expires_year': '2001', // Year the Credit Card expires
   'security_code': '404' // a 3 or 4 digit CVV code that is on the back of your Credit Card (4 Digits for AMEX on front)
+  'overnight_shipping':  true, // a 3 or 4 digit CVV code that is on the back of your Credit Card (4 Digits for AMEX on front)
 };
 
 // PLEASE DO NOT EDIT ANYTHING BELOW THIS
@@ -29,11 +30,6 @@ var config = {
 // PLEASE DO NOT EDIT ANYTHING BELOW THIS
 // PLEASE DO NOT EDIT ANYTHING BELOW THIS
 // PLEASE DO NOT EDIT ANYTHING BELOW THIS
-
-function placeOrder () {
-  console.log('PLACING ORDER!!!!! PRAY FOR ME FAM!!!');
-  $('button.place-order').trigger('click');
-}
 
 function pay () {
   $('input#dwfrm_payment_creditCard_owner').val(function () {
