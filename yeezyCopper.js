@@ -72,8 +72,8 @@ function pay() {
   }, 300);
 }
 
-function _x(STR_XPATH) {
-  var xresult = document.evaluate(STR_XPATH, document, null, XPathResult.ANY_TYPE, null);
+function _x(str_Xpath) {
+  var xresult = document.evaluate(str_Xpath, document, null, XPathResult.ANY_TYPE, null);
   var xnodes = [];
   var xres;
   while (xres = xresult.iterateNext()) {
@@ -97,7 +97,7 @@ function checkovernightShip()
 {
   //first need to check shipping speed, for overnight shipping or normal
   console.log('First Checking Shipping Speed');
-  if (shipfast === true) {
+  if (shipfast) {
     console.log('Making sure we have the Overnight Shipping!');
     sleep(500);
     $("#shippingoptions > div > ul > li.shipping-method-list-item.clearfix.shipping-method-Overnight").click();
@@ -109,7 +109,7 @@ function checkovernightShip()
     console.log('We got Overnight Shipping! Now placing order!');
     saveDelivery();
 
-  if (shipfast === false) {
+  if (!shipfast) {
     saveDelivery();
   }
 }
