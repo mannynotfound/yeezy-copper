@@ -1,8 +1,6 @@
 // EDIT THE STUFF BELOW IN ORDER TO MAKE THIS THING WORK. :)
 // I PUT NOTES ON THE RIGHT OF EACH FIELD TO HELP YOU OUT.
 
-var shipfast = true; //IF YOU WANT OVERNIGHT SHIPPING SET TO TRUE.
-
 var config = {
   'desired_sizes': ['9', '9.5', '10', '8.5', '8', '10.5', '11', '11.5', '12'], // arranged in order of preference
   'billing_different_than_shipping': true, // set to use different billing address, TRUE or FALSE
@@ -24,6 +22,7 @@ var config = {
   'expires_month': 'January', // must be full month name to match adidas.com
   'expires_year': '2001', // Year the Credit Card expires
   'security_code': '404' // a 3 or 4 digit CVV code that is on the back of your Credit Card (4 Digits for AMEX on front)
+  'shipfast': true //SET TO TRUE IF YOU WANT OVERNIGHT SHIPPING, COSTS $15 EXTRA. SET TO FALSE FOR NORMAL SHIPPING.
 };
 
 // PLEASE DO NOT EDIT ANYTHING BELOW THIS
@@ -94,7 +93,7 @@ function sleep(milliseconds) {
 }
 
 
-function checkovernightShip() 
+function checkovernightShip()
 {
   //first need to check shipping speed, for overnight shipping or normal
   console.log('First Checking Shipping Speed');
@@ -109,7 +108,7 @@ function checkovernightShip()
     sleep(500);
     console.log('We got Overnight Shipping! Now placing order!');
     saveDelivery();
-  
+
   if (shipfast === false) {
     saveDelivery();
   }
