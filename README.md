@@ -9,7 +9,7 @@ Chrome extension to automatically add Yeezys in your preferred size to your cart
 
 ## Docs
 
-See docs at [yeezycopper.com]*(http://yeezycopper.com). 
+See docs at the official site [here](http://yeezycopper.com).
 
 _Special thanks to [@aklingspor](https://github.com/aklingspor) for setting 
 the docs page up and contributing to this project!_
