@@ -22,7 +22,7 @@ var config = {
   'expires_month': 'January', // must be full month name to match adidas.com
   'expires_year': '2001', // Year the Credit Card expires
   'security_code': '404' // a 3 or 4 digit CVV code that is on the back of your Credit Card (4 Digits for AMEX on front)
-  'config.shipfast': true //SET TO TRUE IF YOU WANT OVERNIGHT SHIPPING, COSTS $15 EXTRA. SET TO FALSE FOR NORMAL SHIPPING.
+  'shipfast': true //SET TO TRUE IF YOU WANT OVERNIGHT SHIPPING, COSTS $15 EXTRA. SET TO FALSE FOR NORMAL SHIPPING.
 };
 
 // PLEASE DO NOT EDIT ANYTHING BELOW THIS
