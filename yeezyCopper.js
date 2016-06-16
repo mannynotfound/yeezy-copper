@@ -22,7 +22,7 @@ var config = {
   'expires_month': 'January', // must be full month name to match adidas.com
   'expires_year': '2001', // Year the Credit Card expires
   'security_code': '404' // a 3 or 4 digit CVV code that is on the back of your Credit Card (4 Digits for AMEX on front)
-  'shipfast': true //SET TO TRUE IF YOU WANT OVERNIGHT SHIPPING, COSTS $15 EXTRA. SET TO FALSE FOR NORMAL SHIPPING.
+  'config.shipfast': true //SET TO TRUE IF YOU WANT OVERNIGHT SHIPPING, COSTS $15 EXTRA. SET TO FALSE FOR NORMAL SHIPPING.
 };
 
 // PLEASE DO NOT EDIT ANYTHING BELOW THIS
@@ -72,6 +72,17 @@ function pay() {
   }, 300);
 }
 
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds) {
+      break;
+    }
+  }
+}
+
+
+// Allows us to use a Xpath to reference the Overnight shipping button
 function _x(str_Xpath) {
   var xresult = document.evaluate(str_Xpath, document, null, XPathResult.ANY_TYPE, null);
   var xnodes = [];
@@ -83,23 +94,16 @@ function _x(str_Xpath) {
   return xnodes;
 }
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds) {
-      break;
-    }
-  }
-}
-
-
-function checkovernightShip()
-{
+function checkOvernightShip() {
   //first need to check shipping speed, for overnight shipping or normal
   console.log('First Checking Shipping Speed');
-  if (shipfast) {
+  if (config.shipfast) {
     console.log('Making sure we have the Overnight Shipping!');
     sleep(500);
+    // Had to use specific, weird selectors in order to simulate a "click" for
+    // the Overnight shipping button. The layout/design of the button makes it hard to reference.
+    // These selectors use a newer JQuery library that allows us to reference XPaths
+    // See the _x(str_Xpath) function above too
     $("#shippingoptions > div > ul > li.shipping-method-list-item.clearfix.shipping-method-Overnight").click();
     $("#shippingoptions > div > ul > li.shipping-method-list-item.clearfix.shipping-method-Overnight").click();
     $("#shippingoptions > div > ul > li.shipping-method-list-item.clearfix.shipping-method-Overnight > label > div.ffRadioWrapper").click();
@@ -109,7 +113,7 @@ function checkovernightShip()
     console.log('We got Overnight Shipping! Now placing order!');
     saveDelivery();
 
-  if (!shipfast) {
+  if (!config.shipfast) {
     saveDelivery();
   }
 }
@@ -187,7 +191,7 @@ function checkovernightShip()
         return config.billing_zipcode;
       });
     }
-    checkovernightShip();
+    checkOvernightShip();
   }
 
   function correctBilling(cb) {
@@ -349,7 +353,7 @@ function checkovernightShip()
     var checkInfo = function() {
       if (shippingOk && billingOk) {
         clearInterval(timer);
-        checkovernightShip();
+        checkOvernightShip();
       }
     };
 
