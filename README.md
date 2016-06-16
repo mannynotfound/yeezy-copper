@@ -5,9 +5,11 @@
 
 # Yeezy Copper
 
-A project derived from https://github.com/mannynotfound/. 
+Chrome extension to automatically add Yeezys in your preferred size to your cart and then automate the checkout process.
 
-Please visit yeezycopper.com for more info, setup, etc.
+## Docs
 
-"Chrome extension to automatically add Yeezys in your preferred size to your cart and then automate the checkout process."
+See docs at [yeezycopper.com]*(http://yeezycopper.com). 
 
+_Special thanks to [@aklingspor](https://github.com/aklingspor) for setting 
+the docs page up and contributing to this project!_
