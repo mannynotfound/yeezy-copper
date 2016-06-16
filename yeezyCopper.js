@@ -11,7 +11,7 @@ var config = {
   'city': 'New York', // City for shipping information
   'state': 'New York', // State for shipping information
   'zipcode': '10013', // ZIP CODE for shipping information
-  'phone_number': '828-381-4004', // must be in this format
+  'phone_number': 'XXX-XXX-XXXX', // must be in this format
   'billing_address_1': '300 Yeezy St', // main address for billing address
   'billing_address_2': '', // used for apartment #s, etc for BILLING
   'billing_city': 'Fairfax', // City for billing information
