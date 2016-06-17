@@ -12,6 +12,7 @@
   ],
   "browser_action": {
     "default_icon" : "icon-16.png",
+    "default_popup": "info.html",
     "default_title": "Enable/Disable"
   },
   "background": {
