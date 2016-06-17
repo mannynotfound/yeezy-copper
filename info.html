@@ -20,16 +20,34 @@
         color: black;
         letter-spacing: 0.3px;
       }
+      @keyframes yeezyanimate {
+    0%   {background-color: #EDEDED;}
+    25%  {background-color: #D4EEFF;}
+    50%  {background-color: #EDEDED;}
+    95% {background-color: #D4EEFF;}
+    100% {visibility: hidden;}
+}
+      div {
+      width: 100%;
+      height: 100%;
+      background-color: #EDEDED;
+      animation-name: yeezyanimate;
+      animation-duration: 15s;
+
+}
     </style>
   </head>
-  <body style="width:250px" >
+  <body style="width:250px; background-color: #EDEDED">
     <h1>Yeezy Copper</h1>
     <br>
+    <div>
+    <br><img src="yeezy.jpeg" width="60%" height="60%"><br><br><br>
     <i>Compatible with Yeezy drops, and other shoes on Adidas.com </i><br><br>
     <a href="http://yeezycopper.com" target="_blank">Website</a><br><br>
     <a href="update.html">Update</a><br><br>
     <a href="https://github.com/mannynotfound/yeezy-copper/issues/new" target="_blank">Report Issue</a>
     <br><br>
+    </div>
     <h5> Updated last 6/16/16. Stable build. </h5>
   </body>
 </html>
